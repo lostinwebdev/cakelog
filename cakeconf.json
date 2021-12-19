@@ -1,0 +1,8 @@
+{
+  "logger": [
+    {
+      "common": "example_log.txt",
+      "second": "another_log.txt",
+    }
+  ]
+}
