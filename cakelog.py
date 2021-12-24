@@ -3,6 +3,9 @@ import pathlib
 import json
 import time
 
+
+#look at the config file, and get all of its values
+
 def look_at_config():
 
     if(os.path.isfile("cakeconf.json")):
@@ -15,6 +18,8 @@ def look_at_config():
 
 the_logger_paths = look_at_config()
 
+
+# get the path of the logger, by the name in the config
 
 def get_logger(name):
     if(os.path.isfile("cakeconf.json")):
@@ -35,7 +40,8 @@ def get_logger(name):
         print("RESUBMIT")
         return conf_values_final
 
-#the_logger = get_logger("common")
+    
+# create the log-file if it is not there
 
 def create_logger(name):
     the_log_path = get_logger(name)
@@ -47,7 +53,7 @@ def create_logger(name):
         return False
 
 
-#print(create_logger("next"))
+#log (write) the message in the log-file
 
 def log(the_logger, msg):
 
@@ -72,5 +78,3 @@ def log(the_logger, msg):
             return False
     else:
         return False
-
-print(log("second", "HALLO"))
